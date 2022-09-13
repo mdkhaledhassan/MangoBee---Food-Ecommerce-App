@@ -1,10 +1,10 @@
-import 'package:MangoMee/screen/user/navbar.dart';
+import 'package:MangoBee/screen/user/navbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:MangoMee/screen/user/homepage/app_bar.dart';
-import 'package:MangoMee/screen/user/homepage/carousel.dart';
-import 'package:MangoMee/screen/user/homepage/category-part.dart';
-import 'package:MangoMee/screen/user/homepage/selling_part.dart';
-import 'package:MangoMee/theme/theme.dart';
+import 'package:MangoBee/screen/user/homepage/app_bar.dart';
+import 'package:MangoBee/screen/user/homepage/carousel.dart';
+import 'package:MangoBee/screen/user/homepage/category-part.dart';
+import 'package:MangoBee/screen/user/homepage/selling_part.dart';
+import 'package:MangoBee/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:MangoMee/models/auth_model.dart';
-import 'package:MangoMee/screen/signup_screen.dart';
-import 'package:MangoMee/widgets/text_field.dart';
+import 'package:MangoBee/models/auth_model.dart';
+import 'package:MangoBee/screen/signup_screen.dart';
+import 'package:MangoBee/widgets/text_field.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});

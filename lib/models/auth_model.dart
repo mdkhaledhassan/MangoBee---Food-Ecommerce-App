@@ -1,10 +1,10 @@
-import 'package:MangoMee/screen/admin/dashboard_screen.dart';
-import 'package:MangoMee/screen/signin_screen.dart';
+import 'package:MangoBee/screen/admin/dashboard_screen.dart';
+import 'package:MangoBee/screen/signin_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:MangoMee/screen/user/homepage/homepage.dart';
+import 'package:MangoBee/screen/user/homepage/homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Auth {

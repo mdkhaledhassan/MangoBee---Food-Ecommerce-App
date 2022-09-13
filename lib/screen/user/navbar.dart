@@ -1,8 +1,8 @@
-import 'package:MangoMee/screen/user/categoy/category_page.dart';
-import 'package:MangoMee/screen/user/homepage/homepage.dart';
-import 'package:MangoMee/screen/user/order/order.dart';
-import 'package:MangoMee/screen/user/profile/profile.dart';
-import 'package:MangoMee/theme/theme.dart';
+import 'package:MangoBee/screen/user/categoy/category_page.dart';
+import 'package:MangoBee/screen/user/homepage/homepage.dart';
+import 'package:MangoBee/screen/user/order/order.dart';
+import 'package:MangoBee/screen/user/profile/profile.dart';
+import 'package:MangoBee/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';

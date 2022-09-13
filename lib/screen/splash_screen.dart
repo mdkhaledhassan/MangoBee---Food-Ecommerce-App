@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:MangoMee/screen/user/homepage/homepage.dart';
+import 'package:MangoBee/screen/user/homepage/homepage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:MangoMee/screen/signin_screen.dart';
+import 'package:MangoBee/screen/signin_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:MangoMee/screen/admin/dashboard_screen.dart';
-import 'package:MangoMee/screen/splash_screen.dart';
+import 'package:MangoBee/screen/admin/dashboard_screen.dart';
+import 'package:MangoBee/screen/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
