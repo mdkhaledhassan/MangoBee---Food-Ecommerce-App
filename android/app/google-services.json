@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "332267307669",
+    "project_id": "mangobee-686a7",
+    "storage_bucket": "mangobee-686a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332267307669:android:94b0f222ef3d7fffd7119c",
+        "android_client_info": {
+          "package_name": "com.mdkhaledhassan.mangobee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "332267307669-pljo2l3fhs0sd7tdfecmo7vafntp4p83.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyzKJK4K_TAptKBOyzdX96rFLLA_1vCtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "332267307669-pljo2l3fhs0sd7tdfecmo7vafntp4p83.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
