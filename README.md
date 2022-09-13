@@ -1,4 +1,4 @@
-# mangobee
+# MangoBee - Ecommerce App Using Firebase with Flutter
 
 A new Flutter project.
 
