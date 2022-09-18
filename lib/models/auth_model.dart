@@ -1,13 +1,17 @@
 import 'package:MangoBee/screen/admin/dashboard_screen.dart';
 import 'package:MangoBee/screen/signin_screen.dart';
+import 'package:MangoBee/screen/user/navbar.dart';
+import 'package:MangoBee/widgets/show_toast.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:MangoBee/screen/user/homepage/homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Auth {
+  bool isLoading = false;
   signUp(email, password, name, phone, context) async {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
@@ -18,13 +22,19 @@ class Auth {
       addUser(
           id: u_id, email: email, name: name, password: password, phone: phone);
       if (authCredential.uid.isNotEmpty) {
+        SharedPreferences sharedPreferences =
+            await SharedPreferences.getInstance();
+        sharedPreferences.setString("u_id", authCredential.uid);
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Homepage()));
+            context, MaterialPageRoute(builder: (context) => NavBar()));
+        showToast("Registration Successfull");
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
+        showToast("The password provided is too weak.");
+        print('The password provided is too weak');
       } else if (e.code == 'email-already-in-use') {
+        showToast("The account already exists for that email");
         print('The account already exists for that email.');
       }
     } catch (e) {
@@ -51,12 +61,24 @@ class Auth {
       if (authCredential!.uid.isNotEmpty) {
         bool result = await admin_check(authCredential.uid, true);
         if (result == true) {
-          Navigator.push(context,
+          SharedPreferences sharedPreferences =
+              await SharedPreferences.getInstance();
+          sharedPreferences.setString("u_id", authCredential.uid);
+          Navigator.pushReplacement(context,
               MaterialPageRoute(builder: (context) => DashboardScreen()));
+          showToast("Login Successfull");
         } else {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Homepage()));
+          SharedPreferences sharedPreferences =
+              await SharedPreferences.getInstance();
+          sharedPreferences.setString("u_id", authCredential.uid);
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => NavBar()));
+          showToast("Login Successfull");
         }
+        // else {
+        //   Navigator.pushReplacement(
+        //       context, MaterialPageRoute(builder: (context) => SignInScreen()));
+        // }
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -70,10 +92,15 @@ class Auth {
   }
 
   Future<void> signOut(context) async {
-    await FirebaseAuth.instance.signOut().then((value) {
-      Navigator.of(context).push(MaterialPageRoute(
+    await FirebaseAuth.instance.signOut().then((value) async {
+      SharedPreferences sharedPreferences =
+          await SharedPreferences.getInstance();
+
+      await sharedPreferences.clear();
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => SignInScreen(),
       ));
+      showToast("Logout Successfull");
     });
   }
 

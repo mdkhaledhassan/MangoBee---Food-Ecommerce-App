@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:MangoBee/screen/user/homepage/homepage.dart';
+import 'package:MangoBee/screen/user/navbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -15,16 +16,16 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  User? user = FirebaseAuth.instance.currentUser;
+  // User? user = FirebaseAuth.instance.currentUser;
 
-  final Stream<QuerySnapshot> _usersStream =
-      FirebaseFirestore.instance.collection('users').snapshots();
+  // final Stream<QuerySnapshot> _usersStream =
+  //     FirebaseFirestore.instance.collection('users').snapshots();
 
   @override
   Widget build(BuildContext context) {
     Timer(Duration(seconds: 3), () {
-      Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => user == null ? SignInScreen() : Homepage()));
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => NavBar()));
     });
     return Scaffold(
       backgroundColor: Color(0xffF3F5F7),

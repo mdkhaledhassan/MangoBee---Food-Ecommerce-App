@@ -1,3 +1,4 @@
+import 'package:MangoBee/screen/signin_screen.dart';
 import 'package:MangoBee/screen/user/categoy/category_page.dart';
 import 'package:MangoBee/screen/user/homepage/homepage.dart';
 import 'package:MangoBee/screen/user/order/order.dart';
@@ -6,6 +7,7 @@ import 'package:MangoBee/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -126,10 +128,20 @@ class _NavBarState extends State<NavBar> {
               ),
               IconButton(
                 splashRadius: 24,
-                onPressed: () {
-                  setState(() {
-                    currentIndex = 3;
-                  });
+                onPressed: () async {
+                  SharedPreferences sharedPreferences =
+                      await SharedPreferences.getInstance();
+                  var u_id = sharedPreferences.getString("u_id");
+                  if (u_id != null) {
+                    setState(() {
+                      currentIndex = 3;
+                    });
+                  } else {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SignInScreen()));
+                  }
                 },
                 icon: Icon(
                   Icons.person,
