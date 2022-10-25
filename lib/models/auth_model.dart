@@ -117,4 +117,42 @@ class Auth {
       'u_picture': null
     });
   }
+
+  // CollectionReference admins = FirebaseFirestore.instance.collection('users');
+
+  // Future<bool> check_uid({u_id, is_admin}) async {
+  //   return await FirebaseFirestore.instance
+  //       .collection('users')
+  //       .where('u_id', isEqualTo: u_id)
+  //       .where('is_admin', isEqualTo: is_admin)
+  //       .get()
+  //       .then((value) => value.size > 0 ? true : false);
+  // }
+
+  // adminPanel() {
+  //   if (admins == null) {
+  //     return admins.add({
+  //       'u_id': '1',
+  //       'is_admin': true,
+  //       'u_name': 'Md. Khaled Hassan',
+  //       'u_email': 'admin@gmail.com',
+  //       'u_password': '123456',
+  //       'u_phone_no': '01733000689',
+  //       'u_picture': null
+  //     });
+  //   }
+  //   if (admins != null) {
+  //     if (check_uid() == false) {
+  //       return admins.add({
+  //         'u_id': '1',
+  //         'is_admin': true,
+  //         'u_name': 'Md. Khaled Hassan',
+  //         'u_email': 'admin@gmail.com',
+  //         'u_password': '123456',
+  //         'u_phone_no': '01733000689',
+  //         'u_picture': null
+  //       });
+  //     }
+  //   }
+  // }
 }

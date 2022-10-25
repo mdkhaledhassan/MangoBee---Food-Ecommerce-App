@@ -9,6 +9,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:MangoBee/theme/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -18,6 +19,11 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  getProfileInfo() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    var u_id = sharedPreferences.getString("u_id");
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

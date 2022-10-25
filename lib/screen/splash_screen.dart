@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:MangoBee/models/auth_model.dart';
 import 'package:MangoBee/screen/user/homepage/homepage.dart';
 import 'package:MangoBee/screen/user/navbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -16,6 +17,13 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  // @override
+  // void initState() {
+  //   Auth().adminPanel();
+
+  //   // TODO: implement initState
+  //   super.initState();
+  // }
   // User? user = FirebaseAuth.instance.currentUser;
 
   // final Stream<QuerySnapshot> _usersStream =

@@ -137,7 +137,7 @@ class _NavBarState extends State<NavBar> {
                       currentIndex = 3;
                     });
                   } else {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => SignInScreen()));
